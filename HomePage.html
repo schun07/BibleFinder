@@ -5,6 +5,7 @@
         </title>
         <link rel = "stylesheet" href = "InternetNavBar.css"/>
         <script type = "module" src="JavaFinder.js" defer></script>
+        <script type = "module" src="VerseGenerator.js" defer></script>
     </head>
  <body>
     <nav>
@@ -21,9 +22,9 @@
           </div>
           <div class="menu-items">
             <li><a onclick="window.location.href='HomePage.html'">Home</a></li>
-            <li><a onclick="window.location.href='Questionnaire.html'">about</a></li>
-            <li><a onclick="window.location.href='Information.html'">blogs</a></li>
-            <li><a href="#">portfolio</a></li>
+            <li><a onclick="window.location.href='Questionnaire.html'">Questionnaire</a></li>
+            <li><a onclick="window.location.href='Information.html'">Information</a></li>
+            <li><a onclick="window.location.href='Contact.html'">Contact</a></li>
             <li><a href="#">contact</a></li>
           </div>
         </div>
@@ -51,9 +52,10 @@
         </div>
         <div id="result"></div>
         </h2>
-          <h1>Random Bible Verse</h1>
-            <div id="verseBox">Need a verse to read? <br> Click the button to get a verse!</div>
+          <h2>Random Bible Verse</h2>
+            <p>Need a verse to read? <br> Click the button to get a verse!</p>
             <button class="button-31" role="button" onclick="getRandomVerse()">Generate</button>
-            
+            <div id="verseBox" style = "margin-top: 1em; padding: 1em; border: 1px solid #ccc;"></div>
+
     </body>
 </html>

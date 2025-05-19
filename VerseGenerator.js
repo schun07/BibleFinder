@@ -10,23 +10,27 @@ const apiKey = "f76136b950ef9800eccee35888358c8a";
       "2PE", "1JN", "2JN", "3JN", "JUD", "REV"
     ];
 
-    async function getRandomVerse() {
-      const book = books[Math.floor(Math.random() * books.length)];
-      const chapter = Math.floor(Math.random() * 5) + 1;
-      const verse = Math.floor(Math.random() * 20) + 1;
-      const passage = `${book}.${chapter}.${verse}`;
+async function getRandomVerse() {
+  books = ["john", "romans", "psalms", "proverbs", "genesis"];
+  chapter = Math.floor(Math.random() * 5) + 1;
+  verse = Math.floor(Math.random() * 20) + 1;
+  const book = books[Math.floor(Math.random() * books.length)];
+  passage = `${book}.${chapter}.${verse}`;
+  bibleId = '06125adad2d5898a-01'; // NIV
+  apiKey = 'f76136b950ef9800eccee35888358c8a';
 
-      const url = `https://api.scripture.api.bible/v1/bibles/${bibleId}/verses/${passage}?content-type=text`;
+  const url = `https://api.scripture.api.bible/v1/bibles/${bibleId}/passages/${passage}?content-type=text`;
 
-      try {
-        const res = await fetch(url, {
-          headers: { "api-key": apiKey }
-        });
-        if (!res.ok) throw new Error("Verse not found");
-        const data = await res.json();
-        document.getElementById("verseBox").innerHTML =
-          `<strong>${data.data.reference}:</strong><br>${data.data.content}`;
-      } catch (error) {
-        document.getElementById("verseBox").innerText = "Could not fetch verse. Try again!";
-      }
-    }
+  try {
+    const res = await fetch(url, {
+      headers: { "api-key": apiKey }
+    });
+    if (!res.ok) throw new Error("Verse not found");
+    const data = await res.json();
+    document.getElementById("verseBox").innerHTML =
+      `<strong>${data.data.reference}:</strong><br>${data.data.content}`;
+  } catch (error) {
+    console.error(error);
+    document.getElementById("verseBox").innerText = "Could not fetch verse. Try again!";
+  }
+}
