@@ -1,4 +1,4 @@
-const apiKey = "f76136b950ef9800eccee35888358c8a";
+const apiKey = "API_KEY";
     const bibleId = "de4e12af7f28f599-02"; // ASV
     const books = [
       "GEN", "EXO", "LEV", "NUM", "DEU", "JOS", "JDG", "RUT", "1SA", "2SA",
