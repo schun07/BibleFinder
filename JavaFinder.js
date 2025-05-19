@@ -3,11 +3,11 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 // Initialize Supabase
 const supabase = createClient(
-  'https://tjmfpjskvvkqubdllrhu.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqbWZwanNrdnZrcXViZGxscmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1Mjc2MTcsImV4cCI6MjA2MzEwMzYxN30.wZve6Ul3iAWCIWaKd3YKpbUTbzsuwJyP6I65sEMc5C4'
+  'SUPABASE_LINK',
+  'SUPABASE_KEY'
 );
 
-const apiKey = 'f76136b950ef9800eccee35888358c8a';
+const apiKey = 'API_KEY';
 const apiBase = 'https://api.scripture.api.bible/v1';
 
 let userPreferences = {
